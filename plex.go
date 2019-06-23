@@ -8,6 +8,7 @@ import (
 	"errors"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"net/url"
 	"runtime"
@@ -161,6 +162,7 @@ func (p *Plex) Search(title string) (SearchResults, error) {
 
 // GetMetadata can get some media info
 func (p *Plex) GetMetadata(key string) (MediaMetadata, error) {
+	log.Print("HERE")
 	if key == "" {
 		return MediaMetadata{}, errors.New("ERROR: A key is required")
 	}
@@ -183,6 +185,7 @@ func (p *Plex) GetMetadata(key string) (MediaMetadata, error) {
 
 	defer resp.Body.Close()
 
+	log.Printf("Response : %+v", resp.Body)
 	if err := json.NewDecoder(resp.Body).Decode(&results); err != nil {
 		return results, err
 	}
