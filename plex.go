@@ -162,7 +162,7 @@ func (p *Plex) Search(title string) (SearchResults, error) {
 
 // GetMetadata can get some media info
 func (p *Plex) GetMetadata(key string) (MediaMetadata, error) {
-	log.Print("HERE")
+	log.Print("Is it compiling ????")
 	if key == "" {
 		return MediaMetadata{}, errors.New("ERROR: A key is required")
 	}
