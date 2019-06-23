@@ -190,7 +190,6 @@ type LibrarySections struct {
 type TaggedData struct {
 	Tag    string `json:"tag"`
 	Filter string `json:"filter"`
-	ID     string `json:"id"`
 }
 
 // Role ...
